@@ -1,5 +1,6 @@
 {
   "python.defaultInterpreterPath": "C:\\software\\anaconda\\python.exe",
+  "python.pythonPath": "C:\\software\\anaconda\\python.exe",
   "python.testing.unittestEnabled": true,
   "python.testing.pytestEnabled": false,
   "python.testing.unittestArgs": [

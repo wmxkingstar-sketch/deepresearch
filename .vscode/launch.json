@@ -5,6 +5,7 @@
       "name": "Debug CLI Demo",
       "type": "debugpy",
       "request": "launch",
+      "python": "C:\\software\\anaconda\\python.exe",
       "program": "${workspaceFolder}/research_summary.py",
       "args": [
         "--limit",
@@ -20,6 +21,7 @@
       "name": "Debug Current Python File",
       "type": "debugpy",
       "request": "launch",
+      "python": "C:\\software\\anaconda\\python.exe",
       "program": "${file}",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
@@ -29,6 +31,7 @@
       "name": "Debug Unit Tests",
       "type": "debugpy",
       "request": "launch",
+      "python": "C:\\software\\anaconda\\python.exe",
       "module": "unittest",
       "args": [
         "discover",
