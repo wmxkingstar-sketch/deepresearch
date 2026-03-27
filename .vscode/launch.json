@@ -14,7 +14,7 @@
         "GitHub comments can trigger review."
       ],
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
+      "console": "internalConsole",
       "justMyCode": true
     },
     {
@@ -24,7 +24,7 @@
       "python": "C:\\software\\anaconda\\python.exe",
       "program": "${file}",
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
+      "console": "internalConsole",
       "justMyCode": true
     },
     {
@@ -41,7 +41,7 @@
         "test_*.py"
       ],
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
+      "console": "internalConsole",
       "justMyCode": true
     }
   ]

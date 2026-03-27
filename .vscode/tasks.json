@@ -4,7 +4,7 @@
     {
       "label": "Run CLI Demo",
       "type": "shell",
-      "command": "python",
+      "command": "C:\\software\\anaconda\\python.exe",
       "args": [
         "research_summary.py",
         "--limit",
@@ -21,7 +21,7 @@
     {
       "label": "Run Unit Tests",
       "type": "shell",
-      "command": "python",
+      "command": "C:\\software\\anaconda\\python.exe",
       "args": [
         "-m",
         "unittest",
