@@ -1,0 +1,294 @@
+:root {
+  --bg-night: #081c2e;
+  --bg-aurora: #114b5f;
+  --bg-sunrise: #d96c3d;
+  --panel: rgba(255, 248, 239, 0.12);
+  --panel-strong: rgba(255, 248, 239, 0.18);
+  --text-main: #fdf6ed;
+  --text-muted: rgba(253, 246, 237, 0.76);
+  --shadow: 0 24px 60px rgba(3, 10, 18, 0.35);
+  --accent: #ffd166;
+  --accent-soft: #f4a261;
+  --clock-face: rgba(6, 24, 37, 0.74);
+  --clock-outline: rgba(255, 244, 232, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI Variable Display", "Bahnschrift", "Trebuchet MS",
+    sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(255, 209, 102, 0.2), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(217, 108, 61, 0.28), transparent 28%),
+    linear-gradient(135deg, var(--bg-night), var(--bg-aurora) 48%, var(--bg-sunrise));
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.24;
+  pointer-events: none;
+  animation: drift 18s ease-in-out infinite;
+}
+
+body::before {
+  top: -8rem;
+  right: -8rem;
+  background: rgba(255, 209, 102, 0.65);
+}
+
+body::after {
+  bottom: -10rem;
+  left: -10rem;
+  background: rgba(17, 75, 95, 0.75);
+  animation-delay: -9s;
+}
+
+.shell {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+.panel {
+  position: relative;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  border: 1px solid rgba(255, 248, 239, 0.14);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+}
+
+.copy-panel {
+  padding: 2.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  letter-spacing: 0.28rem;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.95;
+}
+
+.subtitle {
+  max-width: 34rem;
+  margin: 1rem 0 2rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.digital-card {
+  padding: 1.4rem 1.6rem;
+  border-radius: 26px;
+  background: rgba(6, 24, 37, 0.36);
+  border: 1px solid rgba(255, 248, 239, 0.12);
+}
+
+.digital-time {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.digital-date {
+  margin: 0.9rem 0 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  margin: 0;
+  padding: 1.15rem 1.2rem;
+  border-radius: 22px;
+  background: rgba(255, 248, 239, 0.08);
+  border: 1px solid rgba(255, 248, 239, 0.12);
+}
+
+.stat-label {
+  margin: 0 0 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.dial-panel {
+  display: grid;
+  place-items: center;
+  min-height: 28rem;
+  padding: 2rem;
+}
+
+.analog-clock {
+  position: relative;
+  width: min(78vw, 24rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(255, 209, 102, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(6, 24, 37, 0.94), var(--clock-face));
+  border: 1px solid var(--clock-outline);
+  box-shadow:
+    inset 0 0 0 14px rgba(255, 248, 239, 0.03),
+    inset 0 0 32px rgba(255, 209, 102, 0.08),
+    0 20px 42px rgba(3, 10, 18, 0.35);
+}
+
+.ring {
+  position: absolute;
+  inset: 1rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 248, 239, 0.08);
+}
+
+.ring-inner {
+  inset: 2.4rem;
+}
+
+.marker {
+  position: absolute;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  color: rgba(253, 246, 237, 0.82);
+}
+
+.marker-12 {
+  top: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marker-3 {
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.marker-6 {
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marker-9 {
+  left: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 999px;
+}
+
+.hour-hand {
+  width: 0.55rem;
+  height: 27%;
+  background: linear-gradient(180deg, rgba(255, 248, 239, 0.92), rgba(244, 162, 97, 0.85));
+}
+
+.minute-hand {
+  width: 0.38rem;
+  height: 37%;
+  background: linear-gradient(180deg, rgba(255, 248, 239, 0.96), rgba(255, 209, 102, 0.92));
+}
+
+.second-hand {
+  width: 0.2rem;
+  height: 42%;
+  background: linear-gradient(180deg, #ffe8b3, #ff8f5a);
+  box-shadow: 0 0 18px rgba(255, 209, 102, 0.35);
+}
+
+.dial-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0.25rem rgba(255, 209, 102, 0.2);
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2rem, -1rem, 0) scale(1.08);
+  }
+}
+
+@media (min-width: 960px) {
+  .shell {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 959px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .shell {
+    padding: 1.5rem;
+  }
+
+  .copy-panel,
+  .dial-panel {
+    padding: 1.5rem;
+  }
+
+  .digital-time {
+    letter-spacing: 0.03em;
+  }
+}

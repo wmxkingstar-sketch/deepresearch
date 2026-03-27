@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime Studio Clock</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel copy-panel">
+        <p class="eyebrow">LOCAL CLOCK</p>
+        <h1>Realtime Studio Clock</h1>
+        <p class="subtitle">
+          A lightweight local clock for your workspace, built with plain HTML,
+          CSS, and JavaScript.
+        </p>
+
+        <div class="digital-card">
+          <p id="time" class="digital-time" aria-live="polite">--:--:--</p>
+          <p id="date" class="digital-date">Loading date...</p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <p class="stat-label">Timezone</p>
+            <p id="timezone" class="stat-value">Loading...</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">UTC Offset</p>
+            <p id="offset" class="stat-value">Loading...</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Day Progress</p>
+            <p id="progress" class="stat-value">0%</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel dial-panel">
+        <div
+          class="analog-clock"
+          role="img"
+          aria-label="Analog clock that updates in real time"
+        >
+          <div class="ring ring-outer"></div>
+          <div class="ring ring-inner"></div>
+          <div class="marker marker-12">12</div>
+          <div class="marker marker-3">3</div>
+          <div class="marker marker-6">6</div>
+          <div class="marker marker-9">9</div>
+          <div id="hour-hand" class="hand hour-hand"></div>
+          <div id="minute-hand" class="hand minute-hand"></div>
+          <div id="second-hand" class="hand second-hand"></div>
+          <div class="dial-center"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

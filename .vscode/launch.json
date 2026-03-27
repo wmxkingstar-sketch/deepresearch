@@ -43,6 +43,22 @@
       "cwd": "${workspaceFolder}",
       "console": "internalConsole",
       "justMyCode": true
+    },
+    {
+      "name": "Run Realtime Clock Server",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "C:\\software\\anaconda\\python.exe",
+      "program": "${workspaceFolder}/serve_clock.py",
+      "args": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
     }
   ]
 }

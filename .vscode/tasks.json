@@ -39,6 +39,22 @@
         "isDefault": true
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Run Realtime Clock Server",
+      "type": "shell",
+      "command": "C:\\software\\anaconda\\python.exe",
+      "args": [
+        "serve_clock.py",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
     }
   ]
 }
